@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- B2 -->
+<html lang="ka">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<title>B2 Ads</title>
+
+
+<script src="./b2_file/jquery.js.download"></script>
+    
+   
+<!--TEST-->  
+    
+<link href="./b2_file/b-1.css" type="text/css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+<div class="ad-catfish ad-catfish__desktop">
+	<div class="ad-catfish-content">
+        <a href="https://www.lider-bet.com/api/?app=marketing/link_handler&amp;ident=6fb717445369b7c3755da9a8b2192159" target="_blank" width="1050" height="100"><img src="./b2_file/catfish-pc-1.png"></a>
+		<div class="ad-close">
+			<i class="fas fa-times"></i>
+		</div>
+	</div>
+</div>
+
+
+<!--FOOTER--> 
+
+
+ 
+
+   <script type="text/javascript">
+    
+      const url = window.location.pathname
+      const adPopupClickedDate = localStorage.getItem('adPopupClickedDate')
+      const currentDate = new Date()
+      const dateFromLS = new Date(adPopupClickedDate )
+      const hoursDiff = Math.abs(currentDate - dateFromLS) / 36e5
+
+      console.log('hoursDiff',hoursDiff)
+
+      if((url === '/' || url.includes('news')) && hoursDiff >= 12) {
+      	const width = $(window).width()
+
+      	if(width > 767) {
+      		$('.ad-popup__desktop').show()
+      	} else {
+      		 $('.ad-popup__mobile').show()
+      	}
+
+      } else {
+      	 $('.ad-popup').hide()
+      }
+
+      $('.ad-close').click(function(){
+      	$(this).parent().parent().hide()
+        const date = new Date()
+      	localStorage.setItem('adPopupClickedDate', date)
+      })
+    </script> 
+    
+
+ 
+    
+    
+
+
+<!-- B2 -->
+</body>
+</html>
